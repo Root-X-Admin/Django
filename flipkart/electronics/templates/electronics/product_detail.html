@@ -173,6 +173,14 @@
             </div>
             {% endfor %}
         </div>
+
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Add Product" class="submit-btn" name="add_product">
+            </form>
+        </div>
         
         <a href="/" class="back-link">Back to Home Page</a>
     </div>
