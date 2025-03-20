@@ -209,6 +209,35 @@
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(40, 116, 240, 0.4);
         }
+
+        .btn-link {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 10px 5px;
+            background: linear-gradient(135deg, #2874f0, #1b5bbf);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(40, 116, 240, 0.4);
+        }
+
+        .btn-link.delete {
+            background: linear-gradient(135deg, #ff4b5c, #d70015);
+            box-shadow: 0 4px 15px rgba(255, 75, 92, 0.3);
+        }
+
+        .btn-link.delete:hover {
+            box-shadow: 0 6px 20px rgba(255, 75, 92, 0.4);
+        }
+
     </style>
 </head>
 <body>
@@ -225,6 +254,9 @@
                     <h2>{{ pro.name }}</h2>
                     <p class="price">₹{{ pro.price }}</p>
                     <p>{{ pro.description }}</p>
+                    <a href="{% url 'update_product' pro.id %}" class="btn-link">Update Product</a>
+                    <a href="{% url 'delete_product' pro.id %}" class="btn-link delete">Delete Product</a>
+
                 </div>
             </div>
             {% endfor %}
